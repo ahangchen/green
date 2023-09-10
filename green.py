@@ -1,5 +1,6 @@
 import datetime
 import os
+import random
 
 # from heavy import special_commit
 
@@ -32,8 +33,9 @@ def trick_commit(year, month, day):
 
 def daily_commit(start_date, end_date):
     for i in range((end_date - start_date).days + 1):
-        cur_date = start_date + datetime.timedelta(days=i)
-        trick_commit(cur_date.year, cur_date.month, cur_date.day)
+        if random.randint(1,10) == 1:
+            cur_date = start_date + datetime.timedelta(days=i)
+            trick_commit(cur_date.year, cur_date.month, cur_date.day)
 
 
 if __name__ == '__main__':
